@@ -3,56 +3,102 @@
 {% block title %}Nicolas Gretten | {{ controller_name }}{% endblock %}
 
 {% block body %}
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-4">
-            <div class="card bg-light">
-                <div class="view overlay">
-                    <img src="https://dummyimage.com/600x400/000/fff" class="card-img-top">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <div class="card-body elegant-color white-text rounded-bottom">
-                    <h4 class="card-title">Projet</h4>
-                    <hr class="hr-light">
-                    <p class="card-text white-text mb-4">Descirption</p>
-                    <a href="#" class="btn btn-primary btn-lg float-right">Direction le site !</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card bg-light">
-                <div class="view overlay">
-                    <img src="https://dummyimage.com/600x400/000/fff" class="card-img-top">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <div class="card-body elegant-color white-text rounded-bottom">
-                    <h4 class="card-title">Projet</h4>
-                    <hr class="hr-light">
-                    <p class="card-text white-text mb-4">Descirption</p>
-                    <a href="#" class="btn btn-primary btn-lg float-right">Direction le site !</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card bg-light">
-                <div class="view overlay">
-                    <img src="https://dummyimage.com/600x400/000/fff" class="card-img-top">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <div class="card-body elegant-color white-text rounded-bottom">
-                    <h4 class="card-title">Projet</h4>
-                    <hr class="hr-light">
-                    <p class="card-text white-text mb-4">Descirption</p>
-                    <a href="#" class="btn btn-primary btn-lg float-right">Direction le site !</a>
-                </div>
-            </div>
-        </div>
+<div class="container mt-5 pt-5 pb-5">
+    <div class="col p-0">
+        <div class="h1"><i class="fab fa-firefox"></i> Les Sites</div>
     </div>
 </div>
+<div class="container mt-5">
+    <div class="row">
+    {% for site in sites %}
+        <div class="col-4" id="card-sites-{{ site.index }}">
+            <div class="card bg-light">
+                <div class="view overlay">
+                    <img src={{ site.image }} class="card-img-top" id="img-sites-{{ site.index }}">
+                    <a>
+                    <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body elegant-color white-text rounded-bottom">
+                    <h4 class="card-title"><i class="{{ site.icon }}"></i> {{ site.name }}</h4>
+                    <hr class="hr-light">
+                    <p class="card-text white-text mb-4">{{ site.desc }}</p>
+                    <a href={{ site.link }} class="btn btn-primary btn-lg float-right">Direction le site !</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+<div class="container mt-5 pt-5 pb-5">
+    <div class="col p-0">
+        <div class="h1"><i class="fab fa-js-square"></i> Les Jeux</div>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        {% for game in games %}
+        <div class="col-4">
+            <div class="card bg-light">
+                <div class="view overlay">
+                    <img src={{ game.image }} class="card-img-top">
+                    <a>
+                    <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body elegant-color white-text rounded-bottom">
+                    <h4 class="card-title"><i class="{{ game.icon }}"></i> {{ game.name }}</h4>
+                    <hr class="hr-light">
+                    <p class="card-text white-text mb-4">{{ game.desc }}</p>
+                    <a href={{ game.link }} class="btn btn-primary btn-lg float-right">Direction le site !</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+<div class="container mt-5 pt-5 pb-5">
+    <div class="col p-0">
+        <div class="h1"><i class="fab fa-adobe"></i> Maquettage</div>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+         {% for design in designs %}
+        <div class="col-4">
+            <div class="card bg-light">
+                <div class="view overlay">
+                    <img src={{ design.image }} class="card-img-top">
+                    <a>
+                    <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body elegant-color white-text rounded-bottom">
+                    <h4 class="card-title"><i class="{{ design.icon }}"></i> {{ design.name }}</h4>
+                    <hr class="hr-light">
+                    <p class="card-text white-text mb-4">{{ design.desc }}</p>
+                    <a href={{ design.link }} class="btn btn-primary btn-lg float-right">Direction le site !</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+
+<script>
+{% for site in sites %}
+$("#card-sites-{{ site.index }}").hover(
+    function() {
+    $("#img-sites-{{ site.index }}").attr("src", "{{ site.gif }}");
+},
+    function() {
+        $("#img-sites-{{ site.index }}").attr("src", "{{ site.image}}");
+    }
+);
+{% endfor %}
+
+</script>
+
 {% endblock %}
