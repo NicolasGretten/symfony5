@@ -50,7 +50,25 @@
                     <h4 class="card-title"><i class="{{ game.icon }}"></i> {{ game.name }}</h4>
                     <hr class="hr-light">
                     <p class="card-text white-text mb-4">{{ game.desc }}</p>
-                    <a href={{ game.link }} class="btn btn-primary btn-lg float-right">Direction le site !</a>
+                    <a href={{ game.link }} class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#modalGame{{ game.index }}">Direction le site !</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalGame{{ game.index }}" tabindex="-1" role="dialog" aria-labelledby="modalMaquettage{{ game.index }}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{ game.name }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {{ game.index }}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,7 +95,25 @@
                     <h4 class="card-title"><i class="{{ design.icon }}"></i> {{ design.name }}</h4>
                     <hr class="hr-light">
                     <p class="card-text white-text mb-4">{{ design.desc }}</p>
-                    <a href={{ design.link }} class="btn btn-primary btn-lg float-right">Direction le site !</a>
+                    <a href={{ design.link }} class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#modalMaquettage{{ design.index }}">Direction le site !</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalMaquettage{{ design.index }}" tabindex="-1" role="dialog" aria-labelledby="modalMaquettage{{ design.index }}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{ design.name }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {{ design.index }}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,6 +121,7 @@
     </div>
 </div>
 {% endblock %}
+
 {% block javascripts %}
 
 <script>

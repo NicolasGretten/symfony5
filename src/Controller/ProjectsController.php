@@ -45,6 +45,7 @@ class ProjectsController extends AbstractController
             ],
             'games' => [ 
                 [
+                    'index' => 1,
                     'image' =>'https://dummyimage.com/600x400/28d6a5/fff',
                     'name' =>'Mastermind',
                     'desc' =>'Mastermind en JavaScript',
@@ -52,6 +53,7 @@ class ProjectsController extends AbstractController
                     'link' =>'#'
                 ],
                 [
+                    'index' => 2,
                     'image' =>'https://dummyimage.com/600x400/28d6a5/fff',
                     'name' =>'Morpion',
                     'desc' =>'Morpion en JavaScript',
@@ -59,6 +61,7 @@ class ProjectsController extends AbstractController
                     'link' =>'#'
                 ],
                 [
+                    'index' => 3,
                     'image' =>'https://dummyimage.com/600x400/28d6a5/fff',
                     'name' =>'To Do List',
                     'desc' =>'To do list en JavaScript',
@@ -68,6 +71,7 @@ class ProjectsController extends AbstractController
             ],
             'designs' => [ 
                 [
+                    'index' => 1,
                     'image' =>'https://dummyimage.com/600x400/2685eb/fff',
                     'name' =>'Leduc guitar',
                     'desc' =>'Premier maquettage sur InDesign, maquettage d\'une application de gestion de commandes pour un luthier.',
@@ -75,6 +79,7 @@ class ProjectsController extends AbstractController
                     'link' =>'#'
                 ],
                 [
+                    'index' => 2,
                     'image' =>'https://dummyimage.com/600x400/2685eb/fff',
                     'name' =>'avoizejotattoo.lu',
                     'desc' =>'Maquettage du Front End pour le site avoizejotattoo.lu avec dialogue écrans',
@@ -82,6 +87,7 @@ class ProjectsController extends AbstractController
                     'link' =>'#'
                 ],
                 [
+                    'index' => 3,
                     'image' =>'https://dummyimage.com/600x400/2685eb/fff',
                     'name' =>'avoizejotattoo.lu',
                     'desc' =>'Maquettage du Panel admin pour le site avoizejotattoo.lu avec dialogue écrans',
